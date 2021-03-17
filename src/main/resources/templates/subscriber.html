@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/fragments :: head"></head>
+
+<div th:replace="fragments/fragments :: navbar"></div>
+<body>
+
+<form action="#" th:action="@{/}" th:object="${subscriber}" method="post">
+    <table>
+        <h4>Sign up below for emails</h4>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}" /></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}" /></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+        </tr>
+        <tr>
+            <td>            <form th:action="@{/subscribe}" method = "post">
+                <p><input class="btn btn-primary btn-lg"  style="background-color:#FF69B4" type="submit" value="Click here to subscribe! "></input></p>
+            </form></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

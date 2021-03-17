@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/fragments :: head"></head>
+<body>
+<div th:replace="fragments/fragments :: navbar"></div>
+
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <img src="../static/images/blackwhite.jpg" th:src="@{images/blackwhite.jpg}" height="500" width="1000"/>
+            <h1 class="display-3">Living and Loving Art</h1>
+            <h4> I am Savannah Anciso and I am a freelance artist, illustrator, and art educator.
+                From a young age we all art (in some way shape or form),
+                some of us love it so much it becomes more than a hobby/or past time.
+                I have been doodling and painting since my earliest memories and art
+                has always been in my life. Explore the site to keep up and view all current collections,
+                read/see behind-the-scenes musings, and find out what is happening next (exhibitions, thoughts, crafts etc). </h4>
+            <form th:action="@{/scollection}" method = "get">
+            <p><input class="btn btn-primary btn-lg"  style="background-color:#FF69B4" type="submit" value="Check out this Special Collection "></input></p>
+            </form>
+            <h3>Do you want to subscriber to our newsletter?</h3>
+            <form th:action="@{/subscriber}" method = "get">
+                <p><input class="btn btn-primary btn-lg"  style="background-color:#FF69B4" type="submit" value="Click Me! "></input></p>
+            </form>
+        </div>
+    </div>
+</main>
+<!--<section class="home-newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="single">
+                    <h2>Subscribe to our Newsletter</h2>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                        <span class="input-group-btn">
+         <button class="btn btn-theme" type="submit">Subscribe</button>
+         </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+<br>
+<br>
+<br>
+<footer th:replace="fragments/fragments :: footer"></footer>
+</body>
+</html>

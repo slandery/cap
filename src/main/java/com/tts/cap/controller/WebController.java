@@ -23,7 +23,7 @@ public class WebController implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/subscribed").setViewName("subscribed");
+        registry.addViewController("/subscriber").setViewName("subscriber");
     }
 
     @GetMapping("/subscriber")

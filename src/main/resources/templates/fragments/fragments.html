@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-   <!-- <link rel="preconnect" href="https://fonts.gstatic.com">-->
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 
     <style>
@@ -13,6 +12,9 @@
 
             height: 100%;
 
+        }
+        .navbar{
+        font-family: 'Ranchers', cursive;
         }
 
         body {
@@ -31,7 +33,7 @@
         h1 {
         font-family: 'Hachi Maru Pop', cursive;
         }
-        h4{
+        h4, h6, h2{
         font-family: 'Ranchers', cursive;
         }
 
@@ -51,23 +53,25 @@
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="dropdown-item" href="/scollection">About</a>
+                <li class="nav-item">
+                <!--<li class="nav-link dropdown">-->
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link active"
+                       href="/about" id="dropdown01">About</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="/scollection">All</a>
+                        <a class="dropdown-item" href="/about">All</a>
                         <!--/*@thymesVar id="categories" type="java.util.List<com.example.demo.model.Category>"*/-->
                         <a class="dropdown-item" th:each="category : ${categories}" th:text="${category}"
                            th:href="@{/filter(category=${category})}"></a>
                     </div>
-                </li>
+                <!--</li>-->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="/collections" id="dropdown02" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">Portfolio</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="/">All</a>
-                        <a class="dropdown-item" href="/collections">Quarenteenie</a>
+                        <a class="dropdown-item" href="/collections">All</a>
+<!--                        <a class="dropdown-item" href="/collections">Quarenteenie</a>
                         <a class="dropdown-item" href="/collections">Foevember</a>
-                        <a class="dropdown-item" href="/collections">Nature</a>
+                        <a class="dropdown-item" href="/collections">Nature</a>-->
                         <!--/*@thymesVar id="brands" type="java.util.List<java.lang.String>"*/-->
 
                         <a class="dropdown-item" th:each="collection : ${collections}" th:text="${collection}"
@@ -82,7 +86,7 @@
 
 
 
-<hr/>
+
 <footer th:fragment="footer">
 
     <div class="container">

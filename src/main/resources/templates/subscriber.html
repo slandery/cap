@@ -1,11 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="fragments/fragments :: head"></head>
-
 <div th:replace="fragments/fragments :: navbar"></div>
-<body>
+<style>
+    td{
+    font-family: 'Ranchers', cursive;
+    }
+div.form
+{
+    display: block;
+    text-align: center;
+}
 
-<form action="#" th:action="@{/}" th:object="${subscriber}" method="post">
+</style>
+
+
+<div>
+<form action="#" th:action="@{/}" th:object="${subscriber}" method="get">
     <table>
         <h4>Sign up below for emails</h4>
         <tr>
@@ -16,14 +27,20 @@
         <tr>
             <td>Email:</td>
             <td><input type="text" th:field="*{email}" /></td>
-            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+
+            </td>
         </tr>
         <tr>
-            <td>            <form th:action="@{/subscribe}" method = "post">
+            <td>
+                <form th:action="@{/subscriber}" method = "post">
                 <p><input class="btn btn-primary btn-lg"  style="background-color:#FF69B4" type="submit" value="Click here to subscribe! "></input></p>
-            </form></td>
+            </form>
+            </td>
         </tr>
     </table>
+
 </form>
-</body>
-</html>
+</div>
+
+<footer th:replace="fragments/fragments :: footer"></footer>

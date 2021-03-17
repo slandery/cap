@@ -20,9 +20,12 @@ public class HomeController {
     }
 
     @GetMapping("/about")
-    public String scollection(){
-        return "scollection.html";
+    public String about(){
+        return "about.html";
     }
+
+    @GetMapping("/subscribed")
+    public String subscribed(){return "subscribe.html";}
 
 }
 

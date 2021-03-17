@@ -8,18 +8,18 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class QuoteService {
-//    public Quote quoteOfDay(){
-//        String url = "http://quotes.rest/qod/art";
-//
-//        try{
-//            RestTemplate restTemplate = new RestTemplate();
-//            return restTemplate.getForObject(url, Quote.class);
-//        } catch (HttpClientErrorException ex) {
-//            Quote quote = new Quote();
-//            quote.setAuthor("error");
-//            return quote;
-//        }
-//    }
+    public Quote quoteOfDay(String quote){
+        String url = "http://quotes.rest/qod/art";
+
+        try{
+            RestTemplate restTemplate = new RestTemplate();
+            return restTemplate.getForObject(url, Quote.class);
+        } catch (HttpClientErrorException ex) {
+            Quote info = new Quote();
+            info.setQuote("error");
+            return info;
+        }
+    }
 
 
 

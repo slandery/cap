@@ -16,7 +16,7 @@ div.form
 
 
 <div>
-<form action="#" th:action="@{/}" th:object="${subscriber}" method="get">
+<form th:action="@{/subscriber}" th:object="${subscriber}" method="post">
     <table>
         <h4>Sign up below for emails</h4>
         <tr>
@@ -33,9 +33,7 @@ div.form
         </tr>
         <tr>
             <td>
-                <form th:action="@{/subscriber}" method = "post">
                 <p><input class="btn btn-primary btn-lg"  style="background-color:#FF69B4" type="submit" value="Click here to subscribe! "></input></p>
-            </form>
             </td>
         </tr>
     </table>
@@ -44,3 +42,4 @@ div.form
 </div>
 
 <footer th:replace="fragments/fragments :: footer"></footer>
+</html>

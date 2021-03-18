@@ -40,12 +40,12 @@ public class WebController implements WebMvcConfigurer {
 
         return "redirect:/subscribed";
     }*/
-    @PostMapping(value = "/")
+    @PostMapping(value = "/subscriber")
     public String addNewSubscriber(Subscriber subscriber, Model model) {
         subscriberRepo.save(new Subscriber(subscriber.getName(), subscriber.getEmail()));
         model.addAttribute("name", subscriber.getName());
         model.addAttribute("email", subscriber.getEmail());
-        return "redirect:/subscribe";
+        return "subscribe.html";
     }
 
 }

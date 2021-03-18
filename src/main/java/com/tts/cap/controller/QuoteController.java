@@ -14,7 +14,7 @@ public class QuoteController {
     @Autowired
     QuoteService quoteService;
 
-    @PatchMapping
+    @GetMapping
     public String postInfo(Quote quote, Model model) {
         Quote data = quoteService.quoteOfDay(quote.getQuote());
         model.addAttribute("Quote", quote.getQuote());
